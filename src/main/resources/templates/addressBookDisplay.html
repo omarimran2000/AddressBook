@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'id: ' + ${addressBook.id}" />
+<ul>
+    <li th:each="buddy: ${addressBook.buddies}">
+        <span th:text = "${buddy.name}"> </span>
+        <span th:text = "${buddy.phone}"> </span>
+        <span th:text = "${buddy.address}"> </span>
+        <span th:text = "'Buddy ID: ' + ${buddy.id}"> </span>
+    </li>
+</ul>
+<p>Return to the main menu <a href="/oldIndex">here</a></p>
+</body>
+</html>
