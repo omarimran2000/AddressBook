@@ -77,9 +77,10 @@ class BuddyInfoRestController{
     public BuddyInfo buddyInfoAdd(@RequestParam(value="name") String name,
                                @RequestParam(value="phone") String phone,
                                @RequestParam(value="addr") String addr,
+                                  @RequestParam(value="city") String city,
                                @RequestParam(value="bookID") String bookID)
     {
-        BuddyInfo newBuddy = new BuddyInfo(counter.incrementAndGet(),name,addr,phone);
+        BuddyInfo newBuddy = new BuddyInfo(counter.incrementAndGet(),name,addr,phone,city);
         newBuddy.setBookId(bookID);
         buddyInfoRepository.save(newBuddy);
 

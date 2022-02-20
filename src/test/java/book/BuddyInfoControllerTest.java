@@ -28,6 +28,7 @@ public class BuddyInfoControllerTest {
                 .param("name", "Omar")
                 .param("address", "Carleton")
                 .param("phone", "613")
+                .param("city", "Ottawa")
                 .param("bookId", "1")
         ).andExpect(status().isOk()).andExpect(content().string(containsString("Buddy Info : Omar has been modified.")));
 
@@ -42,6 +43,7 @@ public class BuddyInfoControllerTest {
                 .param("name", "Omar")
                 .param("address", "Carleton")
                 .param("phone", "613")
+                .param("city", "Ottawa")
                 .param("bookId", "1")
         );
         mvc.perform(MockMvcRequestBuilders.post("/buddyInfoRemove")

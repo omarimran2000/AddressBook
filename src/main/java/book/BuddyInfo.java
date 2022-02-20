@@ -11,13 +11,15 @@ public class BuddyInfo {
     private String bookId;
     private String name;
     private String address;
+    private String city;
     private String phone;
 
-    public BuddyInfo(Long id, String name, String address, String phone) {
+    public BuddyInfo(Long id, String name, String address, String phone, String city) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.city = city;
     }
     public BuddyInfo(){
 
@@ -64,7 +66,15 @@ public class BuddyInfo {
         this.bookId = bookId;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String toString(){
-        return "Name: " + getName() + " Address: " + getAddress() + " Phone: " + getPhone();
+        return "Name: " + getName() + " Address: " + getAddress() + " Phone: " + getPhone() + "City: "+ getCity();
     }
 }

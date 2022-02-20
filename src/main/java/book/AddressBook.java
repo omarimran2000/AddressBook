@@ -56,16 +56,4 @@ public class AddressBook {
         }
         return s;
     }
-
-    public static void main(String[] args) {
-        BuddyInfo buddy = new BuddyInfo((long) 1, "Omar", "Carleton", "613");
-        AddressBook addressBook = new AddressBook();
-        addressBook.addBuddy(buddy);
-        BuddyInfo buddy2 = new BuddyInfo((long) 2, "Imran", "Carleton", "613");
-        addressBook.addBuddy(buddy2);
-        BuddyInfo buddy3 = new BuddyInfo((long) 3, "Crosby", "Penguins", "211");
-        addressBook.addBuddy(buddy3);
-
-        System.out.println(addressBook);
-    }
 }

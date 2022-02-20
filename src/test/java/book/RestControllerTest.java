@@ -49,8 +49,9 @@ public class RestControllerTest {
                 .param("name", "Omar")
                 .param("addr", "Carleton")
                 .param("phone", "613")
+                .param("city", "Ottawa")
                 .param("bookID", "1")
-        ).andExpect(status().isOk()).andExpect(content().string(containsString("{\"id\":1,\"bookId\":\"1\",\"name\":\"Omar\",\"address\":\"Carleton\",\"phone\":\"613\"}")));
+        ).andExpect(status().isOk()).andExpect(content().string(containsString("{\"id\":1,\"bookId\":\"1\",\"name\":\"Omar\",\"address\":\"Carleton\",\"city\":\"Ottawa\",\"phone\":\"613\"}")));
     }
     @Test
     public void removeBuddy() throws Exception {
@@ -60,12 +61,13 @@ public class RestControllerTest {
                         .param("name", "Omar")
                         .param("addr", "Carleton")
                         .param("phone", "613")
+                        .param("city", "Ottawa")
                         .param("bookID", "1"));
 
         mvc.perform(MockMvcRequestBuilders.get("/buddyInfoRestRemove")
                 .param("name", "Omar")
                 .param("bookID", "1")
-        ).andExpect(status().isOk()).andExpect(content().string(containsString("{\"id\":1,\"bookId\":\"1\",\"name\":\"Omar\",\"address\":\"Carleton\",\"phone\":\"613\"}")));
+        ).andExpect(status().isOk()).andExpect(content().string(containsString("{\"id\":1,\"bookId\":\"1\",\"name\":\"Omar\",\"address\":\"Carleton\",\"city\":\"Ottawa\",\"phone\":\"613\"}")));
 
         mvc.perform(MockMvcRequestBuilders.get("/addressBookRestDisplay").param("bookID", "1"))
                 .andExpect(status().isOk())

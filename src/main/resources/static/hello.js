@@ -17,6 +17,7 @@ function createNewBuddy() {
             name: $('#buddyName').val(),
             phone: $('#buddyPhone').val(),
             addr: $('#buddyAddr').val(),
+            city: $('#buddyCity').val(),
             bookID: $('#buddyBook').val()
         }
     }).then(function (data) {
@@ -52,6 +53,7 @@ function displayBook() {
             buddyString += "Name: " + data.buddies[i].name;
             buddyString += " Address: " + data.buddies[i].address;
             buddyString += " Phone: " + data.buddies[i].phone;
+            buddyString += " City: " + data.buddies[i].city;
             buddyString += "<br>";
         }
         $('#console').append(buddyString);
