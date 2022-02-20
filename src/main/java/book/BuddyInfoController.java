@@ -35,7 +35,7 @@ public class BuddyInfoController {
         book.addBuddy(buddyInfo);
         addressBookRepository.save(book);
 
-        return "/buddyInfoDisplay";
+        return "buddyInfoDisplay";
 
     }
     @GetMapping("/buddyInfoRemove")
@@ -58,7 +58,7 @@ public class BuddyInfoController {
 
         model.addAttribute("buddyInfo",remove);
 
-        return "/buddyInfoDisplay";
+        return "buddyInfoDisplay";
 
     }
 }

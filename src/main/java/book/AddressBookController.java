@@ -20,7 +20,7 @@ public class AddressBookController {
         AddressBook newBook = new AddressBook();
         model.addAttribute("addressBook",newBook);
         addressBookRepository.save(newBook);
-        return "/addressBookCreate";
+        return "addressBookCreate";
 
     }
     @GetMapping("/addressBookForm")
@@ -35,13 +35,13 @@ public class AddressBookController {
     {
         AddressBook addressBook = addressBookRepository.findById(Long.parseLong(GUI.getID()));
         model.addAttribute("addressBook",addressBook);
-        return "/addressBookDisplay";
+        return "addressBookDisplay";
 
     }
     @GetMapping("/oldIndex")
     public String oldIndex()
     {
-        return "/oldIndex";
+        return "oldIndex";
     }
 
 }
