@@ -1,7 +1,7 @@
 
 function createNewBook() {
     $.ajax({
-        url: "http://localhost:8080/addressBookRestCreate"
+        url: "/addressBookRestCreate"
     }).then(function (data) {
 
         $('#console').empty();
@@ -12,7 +12,7 @@ function createNewBook() {
 
 function createNewBuddy() {
     $.ajax({
-        url: "http://localhost:8080/buddyInfoRestAdd",
+        url: "/buddyInfoRestAdd",
         data: {
             name: $('#buddyName').val(),
             phone: $('#buddyPhone').val(),
@@ -26,7 +26,7 @@ function createNewBuddy() {
 }
 function deleteBuddy() {
     $.ajax({
-        url: "http://localhost:8080/buddyInfoRestRemove",
+        url: "/buddyInfoRestRemove",
         data: {
             name: $('#buddyName').val(),
             bookID: $('#buddyBook').val()
@@ -38,7 +38,7 @@ function deleteBuddy() {
 }
 function displayBook() {
     $.ajax({
-        url: "http://localhost:8080/addressBookRestDisplay",
+        url: "/addressBookRestDisplay",
         data: {
             bookID: $('#searchBook').val()
         }
